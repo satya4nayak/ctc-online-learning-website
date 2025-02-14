@@ -1,11 +1,14 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
+import Hero from '../components/Hero'
+import MultipleCard from '../components/MultipleCard'
 
 const HomPage = () => {
     return (
         <div>
             <Navbar />
-            <h1>HOMEPAGE</h1>
+            <Hero />
+            <MultipleCard />
         </div>
     )
 }

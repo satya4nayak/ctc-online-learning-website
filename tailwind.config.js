@@ -14,8 +14,10 @@ export default {
         'border-color' : '#D1D7DC',
         'success-color' : '#19A463',
         'warning-color' : '#F69C08',
+        'logo-yellow' : '#FAE534',
       }
     },
   },
-  plugins: [],
+  plugins: [
+  ],
 }
