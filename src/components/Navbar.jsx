@@ -4,7 +4,7 @@ import axios from "axios";
 
 const Navbar = () => {
   return (
-    <nav className="navbar bg-logo-yellow flex w-screen h-[8vh] p-0 border-b-[1px] border-yellow-100">
+    <nav className="navbar bg-logo-yellow flex w-[100%] h-[8vh] p-0 border-b-[1px] border-yellow-100">
       {/* Logo */}
       <div className="logo grid absolute h-[7vw] w-[7vh] ml-[1.5%] mt-1">
         <img src={logo} alt="Logo" className="rounded-3xl" />
