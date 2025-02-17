@@ -17,7 +17,7 @@
   --accent-color: #A435F0;
   --background-color-1: #F8F9FB;
   --text-color: #1C1D1F;
-  --border-color: #D1D7DC;
+  --border-color: #95989a;
   --success-color: #19A463;
   --warning-color: #F69C08;
   --logo-yellow :#fae534;
@@ -25,30 +25,31 @@
 /* Scroll-Bar */
 @media (min-width: 508px) {
   /* For WebKit browsers (Chrome, Safari, Edge) */
-  ::-webkit-scrollbar {
-      width: 10px;
-      border-radius: 5px;
-  }
+  /* Webkit Browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px; /* for horizontal scrollbar */
+}
 
-  ::-webkit-scrollbar-track {
-      background: #f0f0f0;
-      border-radius: 5px;
-  }
+::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 5px;
+}
 
-  ::-webkit-scrollbar-thumb {
-      background: var(--logo-yellow);
-      border-radius: 5px;
-  }
+::-webkit-scrollbar-thumb {
+  background: var(--logo-yellow);
+  border-radius: 5px;
+}
 
-  ::-webkit-scrollbar-thumb:hover {
-      background: var(--secondary-color);
-  }
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+}
 
-  /* For Firefox */
-  * {
-      scrollbar-width: thin;  
-      scrollbar-color: rgb(10, 10, 106) #f0f0f0;
-  }
+/* Firefox */
+html {
+  scrollbar-width: thin;  /* For Firefox */
+  scrollbar-color: var(--border-color) #f0f0f0;
+}
 }
 
 /* Base styles */
@@ -82,6 +83,14 @@ body {
     display: none;
     padding: 0;
   }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+@media (min-width : 768px) and (max-width : 1024px) {
+  .search-bar{
+    padding-left: 1%;
+  }
 }
 @media (max-width:768px) and (min-width: 500px){
   .search-bar{
@@ -94,7 +103,7 @@ body {
     margin-left: 15%;
   }
 }
-@media (max-width: 1085px){
+@media (max-width: 1024px){
   .sign-in-up{
     display: none;
   }

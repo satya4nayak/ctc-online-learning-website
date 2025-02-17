@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 import MultipleCard from '../components/MultipleCard'
-import CourseCarousel from '../components/CourseCarousel'
+import CourseDisplay from '../components/CourseDisplay'
 
 const HomPage = () => {
     return (
@@ -10,7 +10,7 @@ const HomPage = () => {
             <Navbar />
             <Hero />
             <MultipleCard />
-            <CourseCarousel />
+            <CourseDisplay />
         </div>
     )
 }

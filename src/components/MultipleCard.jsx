@@ -21,7 +21,7 @@ const MultipleCard = () => {
   };
 
   React.useEffect(() => {
-    if (!containerRef.current) return;
+    if (!containerRef.current || window.innerWidth <= 1024) return;
     let scrollTimeout;
     const scrollContainer = containerRef.current;
     
@@ -42,13 +42,13 @@ const MultipleCard = () => {
   const x = useTransform(scrollXProgress, [0, 1], [0, -100]);
 
   return (    
-    <div className="flex h-[70vh] justify-center items-center">
+    <div className="md:my-[12vh] flex h-[40vh] justify-center items-center">
       <section className="relative h-full w-full">
         <motion.div 
           ref={containerRef}
           onMouseMove={handleMouseMove}
           onMouseLeave={() => setMouseX(0)}
-          className="flex gap-6 h-full items-center px-12 overflow-x-scroll scrollbar-hide"
+          className="flex gap-6 h-full items-center px-6 overflow-x-scroll scrollbar-hide"
           style={{
             scrollbarWidth: 'none',
             msOverflowStyle: 'none',
@@ -66,15 +66,14 @@ const MultipleCard = () => {
 
 const Card = ({card}) => {
   return (
-    <div className="multi-cards relative h-[50vh] w-[calc(100vw/10)] min-w-[250px] flex-shrink-0 group cursor-pointer">
+    <div className="multi-cards relative h-[35vh] w-[calc(100vw/10)] min-w-[180px] flex-shrink-0 group cursor-pointer">
     <motion.div
       key={card.id}
       className="absolute inset-0"
       initial={{ scale: 1 }}
       variants={{
         hover: {
-          scale: 1.1,
-          height: "50vh",
+          scale: 1.05,
           transition: {
             delay: 0.1,
             duration: 0.2,
@@ -89,17 +88,17 @@ const Card = ({card}) => {
       }}
     >
       <div 
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-cover bg-center rounded-lg"
         style={{
           backgroundImage: `url(${card.url})`,
         }}
       />
       {/* Original gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 rounded-lg" />
       
       {/* Yellow overlay that appears on group hover */}
       <div 
-        className="absolute bottom-0 left-0 w-full h-1/2 opacity-0 transition-opacity duration-500 ease-out lg:group-hover:opacity-100"
+        className="absolute bottom-0 left-0 w-full h-1/2 opacity-0 transition-opacity duration-500 ease-out lg:group-hover:opacity-100 rounded-lg"
         style={{
           transitionDelay: '0.1s',
           background: 'linear-gradient(to top, #ffe434, transparent)',
@@ -107,7 +106,7 @@ const Card = ({card}) => {
       />
 
       <motion.p 
-        className="absolute bottom-0 left-0 p-6 text-2xl font-bold text-white z-10"
+        className="absolute bottom-0 left-0 p-4 text-xl font-bold text-white z-10"
       >
         {card.title}
       </motion.p>

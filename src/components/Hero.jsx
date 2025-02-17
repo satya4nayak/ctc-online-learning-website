@@ -3,9 +3,9 @@ import heroImg from '../assets/img/hero-photo.png'
 
 const Hero = () => {
   return (
-    <div className="flex flex-col-reverse md:flex-row h-[55vh] w-full">
-    <div className="hero-text-div w-full md:w-1/2">
-        <div className="container hero-text flex-col justify-center items-center mt-[7%] mb-[3%] mx-auto my-auto w-[50%] h-auto border-transparent border-blue-100 box-border border-[0.5px] p-[4%] shadow-lg">
+    <div className="flex flex-col-reverse md:flex-row h-[45vh] w-full">
+    <div className="hero-text-div w-full md:w-1/2 h-auto">
+        <div className="container hero-text flex-col justify-center items-center mt-[1%] md:mt-[7%] mb-[3%] mx-auto w-[60%] md:w-[50%]  h-auto border-transparent border-blue-100 box-border border-[0.5px] p-[4%] shadow-lg">
             <h1 className="text-black text-3xl font-bold">Welcome to CTC-Code To Create</h1>
             <p className="text-black text-lg font-thin">The best place to learn and grow, thousands of courses to help you succeed in your goals</p>
         </div>
